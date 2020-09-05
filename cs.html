@@ -4,14 +4,16 @@
 <meta charset="utf-8">
 <title>777(runoob.com)</title>
 <script>
-let Unix_timestamp = 1301718879;
-var unixTimestamp = new Date(Unix_timestamp * 1000)
-commonTime = unixTimestamp.toLocaleString()
-alert( commonTime );
+var now = new Date(1526572800000),
+y = now.getFullYear(),
+m = now.getMonth() + 1,
+d = now.getDate(),
+x = y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
+alert( x );
 //let Unix_timestamp = 1301718879;
 </script>
 </head>
 <body>
-一一年四月二日123439-666
+一一年四月二日123439-6666
 </body>
 </html>
