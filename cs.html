@@ -4,22 +4,13 @@
 <meta charset="utf-8">
 <title>777(runoob.com)</title>
 <script>
-let date = 575194;
-function timetrans(date){
-    var date = new Date(date*1000);//如果date为13位不需要乘1000
-    var Y = date.getFullYear() + '-';
-    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-    var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
-    var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-    var m = (date.getMinutes() <10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
-    var s = (date.getSeconds() <10 ? '0' + date.getSeconds() : date.getSeconds());
-    return Y+M+D+h+m+s;
-    alert(return);
-}
-
+let date = 1349081931;
+var unixTimestamp = new Date(Unix timestamp * 1000)
+commonTime = unixTimestamp.toLocaleString()
+document.write(commonTime);
 </script>
 </head>
 <body>
-一一年四月二日123439-66
+一一年四月二日123439-66666
 </body>
 </html>
