@@ -12,26 +12,11 @@ function displayDate(){
 <body>
 
 <h1>我的第一个 JavaScript 程序</h1>
-<p id="demo">这是一个段99落</p>
+<p id="demo">这是一个段999落</p>
 
-function timeConverter(UNIX_timestamp){
-  var a = new Date(UNIX_timestamp * 1000);
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var year = a.getFullYear();
-  var month = months[a.getMonth()];
-  var date = a.getDate();
-  var hour = a.getHours();
-  var min = a.getMinutes();
-  var sec = a.getSeconds();
-  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-  return time;
-}
-console.log(timeConverter(0));
+var unixTime = require('unix-time');
 
-// Will display time in 10:30:23 format
-var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-console.log(formattedTime);
+unixTime(new Date()); // 1374016861
 
 </body>
 </html>
