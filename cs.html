@@ -5,16 +5,25 @@
 <title>777(runoob.com)</title>
 <script>
 
-var now = new Date(1526572800000),
-y = now.getFullYear(),
-m = now.getMonth() + 1,
-d = now.getDate(),
-x = y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
-console.log(x);
+// 时间戳为10位需*1000，时间戳为13位直接获取 ,获取当前时间 new Date().getTime() 获取13位时间戳
+function getExactTime(time) {
+        var date = new Date(time);
+        // var date = new Date(time* 1000);
+        var year = date.getFullYear() + '-';
+        var month = (date.getMonth()+1 < 10 ? '0' + (date.getMonth()+1) : date.getMonth()+1) + '-';
+        var dates = date.getDate() + ' ';
+        var hour = date.getHours() + ':';
+        var min = date.getMinutes() + ':';
+        var second = date.getSeconds();
+        return year + month + dates + hour + min + second ;
+ }
+    getExactTime(1571880953210);
+    console.log(getExactTime(1571880953210));
+
 //let Unix_timestamp = 1301718879;
 </script>
 </head>
 <body>
-一一年四月二日123439-666
+一一年四月二日123439-6666
 </body>
 </html>
