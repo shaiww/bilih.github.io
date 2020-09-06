@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>777</title>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+
+</script>
+</head>
+<body>
+6
+</body>
+</html>
+
+
+<script>
+哔哩哔哩注册时间查询
+查询B站账号注册时间(只能查询登录账号的注册时间)
+
+安装此脚本?
+询问，评论，或者举报这个脚本.
+// ==UserScript==
+// @name         哔哩哔哩注册时间查询
+// @namespace    undefined
+// @version      0.1.1
+// @description  查询B站账号注册时间(只能查询登录账号的注册时间)
+// @author       coldrainf
+// @match        *://space.bilibili.com/*
+// @grant        unsafeWindow
+// @require      http://code.jquery.com/jquery-3.2.1.js
+// @icon 		 https://www.bilibili.com/favicon.ico
+// ==/UserScript==
+(function() {
+	'use strict';
+	//初始化
+	$(function() {
+		if(DedeUserID == mid) pageInit();
+	});
+	function pageInit() {
+		setTimeout(function() {
+			if ($(".user .info .meta .row").length > 0) {
+				$("head").append(
+					'<style type="text/css">.user .info .meta .row {height: 88px;white-space: normal;}.user .info .jointime .icon {background-position: -209px -84px;}.user .info .help .icon {background-position: -209px -790px;;}.user .info .jointime .text a {padding: 0 5px;color: #00a1d6;}.user .info .help .text a {padding: 0 5px;color: #00a1d6;}</style>'
+				);
+				$(".user .info .meta .row").append(
+					'<div class="item jointime"><span class="icon"></span><span class="text">正在查询...</span></div>'
+				);
+				getJointime()
+			} else {
+				pageInit();
+			}
+		}, 1000);
+	}
+
+	function getJointime() {
+		$.ajax({
+			url: "//member.bilibili.com/x2/creative/h5/calendar/event?ts=0",
+			type: "GET",
+			xhrFields: {
+				withCredentials: true
+			},
+			dataType: "json",
+			success: function(data) {
+                if (!data.data) return $(".user .info .jointime .text").text("查询失败")
+                if (!data.data.pfs) return $(".user .info .jointime .text").html('请先<a href="//passport.bilibili.com/login">登录</a>');
+				let time = new Date(data.data.pfs.profile.jointime * 1000);
+				let year = time.getFullYear();
+                let month = time.getMonth() + 1;
+                let date = time.getDate();
+                let hours = time.getHours().toString().padStart(2, '0');
+                let minutes = time.getMinutes().toString().padStart(2, '0');
+                let seconds = time.getSeconds().toString().padStart(2, '0');
+                $(".user .info .jointime .text").text(`${year}-${month}-${date} ${hours}:${minutes}:${seconds}`);
+			},
+			error: function() {
+				$(".user .info .jointime .text").text("网络错误")
+			}
+		});
+	}
+})();
+</script>
