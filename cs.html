@@ -22,7 +22,7 @@ document.write(x);*/
 <body>
 <div id="source"></div>
 <div id="show"></div>
-一一年四月二日123439-66
+一一年四月二日123439-666
 </body>
 </html>
 
@@ -31,6 +31,10 @@ document.write(x);*/
 $.ajax({
   url: 'http://member.bilibili.com/x2/creative/h5/calendar/event?ts=0',
   type: "GET",
+  xhrFields: {
+				withCredentials: true
+			},
+			dataType: "json",
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
