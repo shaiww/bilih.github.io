@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <title>777</title>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+    $.getJSON('http://example.com/data.php?callback=?,function(jsondata)'){
+        //处理获得的json数据
+    };
+</script>
 
+作者：白手_
+链接：https://www.jianshu.com/p/89a377c52b48
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 <script>
 /*<iframe height="1200" width="800" src="https://wj.qq.com/s2/7123886/012e/"></iframe>
 
@@ -30,11 +39,6 @@ document.write(x);*/
 <script>
 $.ajax({
   url: 'https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0',
-  type: "GET",
-  xhrFields: {
-				withCredentials: true
-			},
-			dataType: "json",
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
