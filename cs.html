@@ -23,18 +23,18 @@ document.write(x);*/
 <div id="source"></div>
 <div id="show"></div>
 
-一一年四月二日123439-666
+一一年四月二日123439-6
 </body>
 </html>
 
 
 <script>
 $.ajax({
-  url: 'https://www.github.com',
+  url: 'https://zh.wikihow.com/用HTML创建一个简单网页',
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
-      if (data.indexOf('Text') != -1) {
+      if (data.indexOf('文本编辑器') != -1) {
         return 'Can see text!';
       }
       else {
