@@ -23,13 +23,16 @@ document.write(x);*/
 <div id="source"></div>
 <div id="show"></div>
 
-一一年四月二日123439-6
+一一年四月二日123439-666
 </body>
 </html>
 
 
 <script>
-$.ajax({
+$("button").click(function(){
+   $("div").load('http://output.jsbin.com/sebusu');
+});
+/*$.ajax({
   url: 'https://zh.wikihow.com/用HTML创建一个简单网页',
   success: function(data) {
     $('#source').html(data);
@@ -45,5 +48,5 @@ $.ajax({
   error: function(){
     document.write(error);
   }
-});
+});*/
 </script>
