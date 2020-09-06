@@ -31,14 +31,14 @@ document.write(x);*/
 <body>
 <div id="source"></div>
 <div id="show"></div>
-一一年四月二日123439-66
+一一年四月二日123439-6666
 </body>
 </html>
 
 
 <script>
 $.ajax({
-  url: 'https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0',
+  url: 'https://cors-anywhere.herokuapp.com/https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0',
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
