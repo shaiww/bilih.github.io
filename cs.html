@@ -20,23 +20,20 @@ document.write(x);*/
 </script>
 </head>
 <body>
-<div></div>
-<button>点击</button>
+<div id="source"></div>
+<div id="show"></div>
 一一年四月二日123439-6
 </body>
 </html>
 
 
 <script>
-$("button").click(function(){
-   $("div").load('https://shaiww.github.io/bilih.github.io');
-});
-/*$.ajax({
-  url: 'https://zh.wikihow.com/用HTML创建一个简单网页',
+$.ajax({
+  url: 'http://output.jsbin.com/sebusu',
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
-      if (data.indexOf('文本编辑器') != -1) {
+      if (data.indexOf('h') != -1) {
         return 'Can see text!';
       }
       else {
@@ -47,5 +44,5 @@ $("button").click(function(){
   error: function(){
     document.write(error);
   }
-});*/
+});
 </script>
