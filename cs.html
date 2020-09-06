@@ -4,7 +4,25 @@
 <meta charset="utf-8">
 <title>777(runoob.com)</title>
 <script>
-<iframe height="1200" width="800" src="https://wj.qq.com/s2/7123886/012e/"></iframe>
+//<iframe height="1200" width="800" src="https://wj.qq.com/s2/7123886/012e/"></iframe>
+
+$.ajax({
+  url: 'http://output.jsbin.com/sebusu',
+  success: function(data) {
+    $('#source').html(data);
+    $('#show').text(function(){
+      if (data.indexOf('Text') != -1) {
+        return 'Can see text!';
+      }
+      else {
+        return "Can't see text!";
+      }
+    });
+  },
+  error: function(){
+    console.log(error);
+  }
+});
 
 /*let Unix_timestamp = 1349081931;
 var now = new Date(Unix_timestamp * 1000),
@@ -17,6 +35,9 @@ document.write(x);*/
 </script>
 </head>
 <body>
-一一年四月二日123439-6
+<div id="source"></div>
+<div id="show"></div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+一一年四月二日123439-666
 </body>
 </html>
