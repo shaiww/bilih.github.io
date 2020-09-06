@@ -22,27 +22,27 @@ document.write(x);*/
 <body>
 <div id="source"></div>
 <div id="show"></div>
-一一年四月二日123439-66666
+一一年四月二日123439-6
 </body>
 </html>
 
 
 <script>
 $.ajax({
-  url: 'https://shaiww.github.io/bilih.github.io/',
+  url: 'https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0',
   success: function(data) {
     $('#source').html(data);
     $('#show').text(function(){
-      if (data.indexOf('纸条') != -1) {
+      if (data.indexOf('jointime') != -1) {
         return 'Can see text!';
       }
       else {
-        return "Can't see text!";
+        return "请先登录";
       }
     });
   },
   error: function(){
-    document.write(if);
+    document.write(error);
   }
 });
 </script>
