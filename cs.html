@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <title>777</title>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const url = "https://member.bilibili.com/x2/creative/h5/calendar/event?ts=0"; // site that doesn’t send Access-Control-*
 fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
 .then(response => response.text())
 .then(contents => console.log(contents))
 .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+</script>
 
 <script>
 /*<iframe height="1200" width="800" src="https://wj.qq.com/s2/7123886/012e/"></iframe>
@@ -28,7 +31,7 @@ document.write(x);*/
 <body>
 <div id="source"></div>
 <div id="show"></div>
-一一年四月二日123439-6
+一一年四月二日123439-66
 </body>
 </html>
 
